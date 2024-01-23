@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.page_list_item.ListItemFragment">
+
+    <View
+        android:id="@+id/viewTopBox"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_margin="10dp"
+        android:background="@color/blue_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:text="@string/page_item_info"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/viewTopBox"
+        app:layout_constraintStart_toStartOf="@+id/viewTopBox"
+        app:layout_constraintTop_toTopOf="@+id/viewTopBox" />
+
+    <TextView
+        android:id="@+id/tvClientLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/page_item_info_client"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/viewTopBox"
+        app:layout_constraintStart_toStartOf="@+id/viewTopBox"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvClient"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/viewTopBox"
+        app:layout_constraintStart_toStartOf="@+id/viewTopBox"
+        app:layout_constraintTop_toBottomOf="@+id/tvClientLabel"
+        tools:text="Nome do Cliente" />
+
+    <TextView
+        android:id="@+id/tvIDLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/page_item_info_id"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvDateLabel"
+        app:layout_constraintStart_toStartOf="@+id/viewTopBox"
+        app:layout_constraintTop_toBottomOf="@+id/tvClient" />
+
+    <TextView
+        android:id="@+id/tvDateLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/page_item_info_date"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/viewTopBox"
+        app:layout_constraintStart_toEndOf="@+id/tvIDLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tvClient" />
+
+    <TextView
+        android:id="@+id/tvID"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvDate"
+        app:layout_constraintStart_toStartOf="@+id/viewTopBox"
+        app:layout_constraintTop_toBottomOf="@+id/tvIDLabel"
+        tools:text="1000" />
+
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/viewTopBox"
+        app:layout_constraintStart_toEndOf="@+id/tvID"
+        app:layout_constraintTop_toBottomOf="@+id/tvIDLabel"
+        tools:text="01/01/2024 12:00" />
+
+    <TextView
+        android:id="@+id/tvInfoItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/blue"
+        android:gravity="center_horizontal"
+        android:padding="5dp"
+        android:text="@string/page_item_msg_item"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewTopBox" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        android:indeterminate="true"
+        app:layout_constraintEnd_toEndOf="@+id/viewTopBox"
+        app:layout_constraintTop_toTopOf="@+id/viewTopBox" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/viewBottomBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfoItem"
+        tools:listitem="@layout/item_list_item" />
+
+    <View
+        android:id="@+id/viewBottomBox"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_margin="10dp"
+        android:background="@color/blue_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:text="@string/page_item_total"
+        android:textColor="@color/blue_light"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/viewBottomBox"
+        app:layout_constraintStart_toStartOf="@+id/viewBottomBox"
+        app:layout_constraintTop_toTopOf="@+id/viewBottomBox" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btNewItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_button_white"
+        android:drawableStart="@drawable/ic_dollar_blue"
+        android:padding="5dp"
+        android:text="@string/page_item_bt_new_item"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewBottomBox"
+        app:layout_constraintEnd_toEndOf="@+id/viewBottomBox"
+        app:layout_constraintStart_toStartOf="@+id/viewBottomBox" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/vgEmptyData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="ivEmptyData,tvEmptyData" />
+
+    <ImageView
+        android:id="@+id/ivEmptyData"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="15dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_sale"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        app:tint="@color/blue_light" />
+
+    <TextView
+        android:id="@+id/tvEmptyData"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/page_item_msg_empty"
+        android:textColor="@color/blue_dark"
+        android:textSize="26sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivEmptyData" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

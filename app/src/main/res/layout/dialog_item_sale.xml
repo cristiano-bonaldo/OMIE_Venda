@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="360dp"
+    android:layout_height="400dp"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="1dp"
+        android:background="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="3"
+            android:text="@string/page_item_dialog_title_insert"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/boxItem"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/btSave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <ImageView
+            android:id="@+id/ivProd"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="15dp"
+            android:importantForAccessibility="no"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_prod"
+            app:layout_constraintStart_toStartOf="@+id/boxItem"
+            app:layout_constraintTop_toTopOf="@+id/boxItem"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tvProdLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="@string/page_item_dialog_prod_label"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivProd"
+            app:layout_constraintEnd_toEndOf="@+id/boxItem"
+            app:layout_constraintStart_toEndOf="@+id/ivProd"
+            app:layout_constraintTop_toTopOf="@+id/ivProd" />
+
+        <EditText
+            android:id="@+id/etProd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/white"
+            android:hint="@string/page_item_dialog_prod_hint"
+            android:inputType="text"
+            android:maxLength="100"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/boxItem"
+            app:layout_constraintStart_toStartOf="@id/boxItem"
+            app:layout_constraintTop_toBottomOf="@id/tvProdLabel" />
+
+        <TextView
+            android:id="@+id/tvProd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/etProd"
+            app:layout_constraintEnd_toEndOf="@id/boxItem"
+            app:layout_constraintStart_toStartOf="@id/boxItem" />
+
+        <ImageView
+            android:id="@+id/ivValueUnit"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="15dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_money"
+            app:layout_constraintStart_toStartOf="@+id/boxItem"
+            app:layout_constraintTop_toBottomOf="@id/etProd" />
+
+
+        <TextView
+            android:id="@+id/tvValueUnitLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="@string/page_item_dialog_vl_unit_label"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivValueUnit"
+            app:layout_constraintEnd_toEndOf="@+id/boxItem"
+            app:layout_constraintStart_toEndOf="@+id/ivValueUnit"
+            app:layout_constraintTop_toTopOf="@+id/ivValueUnit" />
+
+        <EditText
+            android:id="@+id/etValueUnit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="@color/white"
+            android:hint="@string/page_item_dialog_vl_unit_hint"
+            android:inputType="numberDecimal"
+            android:maxLength="8"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/boxItem"
+            app:layout_constraintStart_toStartOf="@id/boxItem"
+            app:layout_constraintTop_toBottomOf="@id/ivValueUnit" />
+
+        <ImageView
+            android:id="@+id/ivDecrease"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/white"
+            android:contentDescription="@string/page_item_dialog_bt_decrease_hint"
+            android:src="@drawable/ic_minus"
+            app:layout_constraintBottom_toBottomOf="@+id/tvQtd"
+            app:layout_constraintEnd_toStartOf="@+id/tvQtd"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@+id/boxItem" />
+
+        <TextView
+            android:id="@+id/tvQtd"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:maxLength="2"
+            android:text="@string/page_item_dialog_qtd_default"
+            android:textColor="@color/red"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/ivIncrease"
+            app:layout_constraintStart_toEndOf="@+id/ivDecrease"
+            app:layout_constraintTop_toBottomOf="@+id/etValueUnit" />
+
+        <ImageView
+            android:id="@+id/ivIncrease"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:background="@color/white"
+            android:contentDescription="@string/page_item_dialog_bt_increase_hint"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toBottomOf="@+id/tvQtd"
+            app:layout_constraintEnd_toEndOf="@+id/boxItem"
+            app:layout_constraintStart_toEndOf="@+id/tvQtd" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_button_blue"
+            android:text="@string/page_item_dialog_bt_cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btSave"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btSave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_button_blue"
+            android:text="@string/page_item_dialog_bt_save"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btCancel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

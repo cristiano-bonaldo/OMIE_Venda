@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardBackgroundColor="@color/green"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="2dp"
+    card_view:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_light"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tvProduct"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/blue_dark"
+            app:layout_constraintEnd_toStartOf="@id/ivDelete"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Nome Produto" />
+
+        <TextView
+            android:id="@+id/tvVlUnitLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="end"
+            android:text="@string/page_item_item_unit_value"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvProduct" />
+
+        <TextView
+            android:id="@+id/tvQtdLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/page_item_item_quantity"
+            android:gravity="end"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/tvVlUnitLabel"
+            app:layout_constraintTop_toTopOf="@+id/tvVlUnitLabel" />
+
+        <TextView
+            android:id="@+id/tvTotalLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:gravity="end"
+            android:text="@string/page_item_item_total"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/ivEdit"
+            app:layout_constraintStart_toEndOf="@+id/tvQtdLabel"
+            app:layout_constraintTop_toTopOf="@+id/tvQtdLabel" />
+
+        <TextView
+            android:id="@+id/tvVlUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:gravity="end"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/tvVlUnitLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tvVlUnitLabel"
+            tools:text="0.000.00" />
+
+        <TextView
+            android:id="@+id/tvQtd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="end"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/tvQtdLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tvQtdLabel"
+            tools:text="50000" />
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="40dp"
+            android:gravity="end"
+            android:textColor="@color/red"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/ivEdit"
+            app:layout_constraintStart_toStartOf="@+id/tvTotalLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tvTotalLabel"
+            tools:text="000.000,00" />
+
+        <ImageView
+            android:id="@+id/ivEdit"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/white"
+            android:contentDescription="@string/page_sale_bt_share_info"
+            android:padding="2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@color/red"
+            android:contentDescription="@string/page_sale_bt_delete_info"
+            android:padding="2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/vgEmptyData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="ivEmptyData,tvEmptyData" />
+
+        <ImageView
+            android:id="@+id/ivEmptyData"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="15dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_sale"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4"
+            app:tint="@color/blue_light" />
+
+        <TextView
+            android:id="@+id/tvEmptyData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center_horizontal"
+            android:text="@string/page_sale_msg_empty"
+            android:textColor="@color/blue_dark"
+            android:textSize="26sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivEmptyData" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
+
+

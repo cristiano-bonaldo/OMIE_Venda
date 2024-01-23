@@ -1,0 +1,117 @@
+<resources>
+    <string name="app_name">OMIE - Vendas</string>
+
+    <string name="msg_loading_data">Processando! Por favor, aguarde…</string>
+
+    <string name="dialog_alert_title">Alerta…</string>
+    <string name="dialog_alert_bt_ok">OK</string>
+    <string name="dialog_alert_bt_cancel">Cancel</string>
+    <string name="dialog_error_title">Erro…</string>
+    <string name="dialog_error_bt_ok">OK</string>
+    <string name="dialog_error_msg">O aplicativo não conseguiu realizar a operação solicitada!\nMensagem: %s</string>
+    <string name="dialog_alert_yesno_bt_yes">Sim</string>
+    <string name="dialog_alert_yesno_bt_no">Não</string>
+
+
+    <!-- Page List SALE -->
+    <string name="page_sale_title">Omie - Vendas</string>
+    <string name="page_sale_msg_sales">Vendas Realizadas</string>
+    <string name="page_sale_msg_empty">Nenhum registro de Venda foi localizado!</string>
+    <string name="page_sale_bt_sale">Registrar Nova Venda</string>
+    <string name="page_sale_bt_sale_info">Registrar Nova Venda</string>
+    <string name="page_sale_bt_edit_info">Editar Registro de Venda</string>
+    <string name="page_sale_bt_delete_info">Deletar Registro de Venda</string>
+    <string name="page_sale_bt_share_info">Compartilhar Registro de Venda</string>
+
+    <string name="page_sale_item_id">Nº Transação</string>
+    <string name="page_sale_item_data">Data</string>
+    <string name="page_sale_item_total">Valor Total (R$)</string>
+
+    <string name="page_sale_delete_title">Exclusão de Venda</string>
+    <string name="page_sale_delete_msg">Deseja realmente excluir este registro de venda?\n\n
+        Cliente: %s \n
+        Nº Transação: %s \n\n
+        Obs.: Todos os itens relacionados a esta venda tambem serão excluidos!</string>
+    <string name="page_sale_delete_bt_ok">OK</string>
+    <string name="page_sale_delete_bt_cancel">Cancelar</string>
+
+    <string name="page_sale_dialog_title">Nova Venda</string>
+    <string name="page_sale_dialog_bt_ok">OK</string>
+    <string name="page_sale_dialog_bt_cancel">Cancelar</string>
+    <string name="page_sale_dialog_client_label">Cliente</string>
+    <string name="page_sale_dialog_client_hint">Informe o cliente…</string>
+    <string name="page_sale_dialog_error_client">Campo de preenchimento obrigatório.\n\nPor favor, informe o cliente! </string>
+
+    <!-- Page Detail - List of ITEMS -->
+    <string name="page_item_title">Omie - Itens da Venda</string>
+    <string name="page_item_info">Registro de Venda</string>
+    <string name="page_item_msg_empty">Nenhum Item foi localizado!</string>
+    <string name="page_item_info_client">Cliente</string>
+    <string name="page_item_info_id">Nº Transação</string>
+    <string name="page_item_info_date">Data</string>
+    <string name="page_item_msg_item">Itens Registrados</string>
+    <string name="page_item_total">Total Geral (R$): %S</string>
+    <string name="page_item_bt_new_item">Registrar Novo Item</string>
+    <string name="page_item_error_locate_sale">Erro ao localizar Venda!</string>
+
+    <string name="page_item_delete_title">Exclusaõ de Item</string>
+    <string name="page_item_delete_msg">Deseja realmente excluir este item?\n\nProduto: %s</string>
+    <string name="page_item_delete_bt_ok">OK</string>
+    <string name="page_item_delete_bt_cancel">Cancelar</string>
+
+    <string name="page_item_delete_sale_title">Exclusão de Venda</string>
+    <string name="page_item_delete_sale_msg">
+        O registro de venda não possui nenhum item cadastrado!\n\nDeseja excluir esta venda?
+    </string>
+    <string name="page_item_delete_sale_bt_yes">Sim</string>
+    <string name="page_item_delete_sale_bt_no">Não</string>
+
+    <string name="page_item_item_unit_value">Vl. Unitário\n(RS)</string>
+    <string name="page_item_item_quantity">Qtd.\n</string>
+    <string name="page_item_item_total">Valor Total\n(R$)</string>
+
+    <string name="page_item_dialog_title_insert">Novo Item</string>
+    <string name="page_item_dialog_title_update">Item - Edição</string>
+    <string name="page_item_dialog_prod_label">Produto</string>
+    <string name="page_item_dialog_prod_hint">Informe o Produto…</string>
+    <string name="page_item_dialog_vl_unit_label">Valor Unitário (R$)</string>
+    <string name="page_item_dialog_vl_unit_hint">Informe o Valor Unitário…</string>
+    <string name="page_item_dialog_qtd_default">0</string>
+    <string name="page_item_dialog_bt_increase_hint">Incrementar Quantidade Item</string>
+    <string name="page_item_dialog_bt_decrease_hint">Decrementar Quantidade Item</string>
+    <string name="page_item_dialog_bt_cancel">Cancelar</string>
+    <string name="page_item_dialog_bt_save">Salvar</string>
+    <string name="page_item_dialog_error_prod">Campo de preenchimento obrigatório.\n\nPor favor, informe o produto!</string>
+    <string name="page_item_dialog_error_vlunit">Valor unitário inválido.\n\nPor favor, informe um valor maior do que zero!</string>
+    <string name="page_item_dialog_error_vlunit_dec">Valor unitário inválido.\n\nO valor informado não pode possuir mais do que duas casas decimais.</string>
+    <string name="page_item_dialog_error_qtd">Quantidade inválida.\n\nPor favor, informe uma quantidade maior do que zero!</string>
+    <string name="page_item_dialog_alert_prod">O produto informado já esta cadastrado!</string>
+
+    <string name="share_data_title">Registro de Venda</string>
+    <string name="share_data_error_whatsapp">Erro ao compartilhar dados com o WhatsApp!\n\nPor favor, confirme que o WhatsApp esta instalado neste dispositivo.</string>
+    <string name="share_data_mail_title">OMIE - Registro de Venda - Detalhes e Produtos</string>
+    <string name="share_data_mail_select_client">Selecione o app de e-mail desejado</string>
+    <string name="share_data_option_whatsapp">Enviar dados para WhatsApp</string>
+    <string name="share_data_option_mail">Enviar dados para E-mail</string>
+    <string name="share_data_option_generic">Escolher outra opção</string>
+    <string name="share_data_info_sale">
+    Registro de Venda\n
+    Cliente: %s\n
+    Nº de Transação: %s\n
+    Data: %s\n
+    Valor Total R$: %s\n\n
+    Itens\n
+    ------------------\n
+    </string>
+
+    <string name="share_data_info_item_sale">
+    Item: %s\n
+    Produto: %s\n
+    Quantidade: %s\n
+    Valor Unitário R$: %s\n
+    Valor R$: %s\n\n
+    </string>
+
+    <string name="share_data_bt_close">Fechar</string>
+
+</resources>
