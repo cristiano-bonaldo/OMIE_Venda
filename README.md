@@ -5,4 +5,4 @@ Funcionalidades:
 - Tela para listagem de vendas
 - Opção de compartilhamento da venda por WhatsApp e E-mail
 - Tela para inserção de item de Venda
-- TEla para listagem de itens
+- Tela para listagem de itens
