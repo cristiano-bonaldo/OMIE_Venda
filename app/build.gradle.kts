@@ -88,13 +88,7 @@ dependencies {
     testImplementation("org.mockito:mockito-core:5.7.0")
     testImplementation("org.mockito:mockito-inline:5.2.0")
 
-//    testImplementation("org.robolectric:robolectric:4.11.1")
-//    // Guava -> Problema com Roboletric -> https://github.com/robolectric/robolectric/issues/8429
-//    testImplementation("com.google.guava:guava:32.0.1-android")
-
-
     //-------------
-
 
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

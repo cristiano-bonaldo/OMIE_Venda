@@ -17,4 +17,15 @@ object DateTimeUtil {
             ""
         }
     }
+
+    fun convertTimeMillisToDate(time: Long): String {
+        return try {
+            val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+            val netDate = Date(time)
+            sdf.format(netDate)
+        } catch (e: Exception) {
+            Log.e(Constants.TAG, e.toString())
+            ""
+        }
+    }
 }

@@ -11,6 +11,7 @@ import cvb.com.br.vendaomie.R
 import cvb.com.br.vendaomie.databinding.FragmentListSaleBinding
 import cvb.com.br.vendaomie.domain.model.Sale
 import cvb.com.br.vendaomie.presentation.UIStatus
+import cvb.com.br.vendaomie.presentation.page_list_sale.adapter.ListItem
 import cvb.com.br.vendaomie.presentation.page_list_sale.adapter.SaleAdapter
 import cvb.com.br.vendaomie.presentation.page_list_sale.dialog.InformClientDialog
 import cvb.com.br.vendaomie.util.DataShareUtil
@@ -92,7 +93,7 @@ class ListSaleFragment : Fragment(R.layout.fragment_list_sale) {
         binding.progressBar.visibility = if (isLoading) { View.VISIBLE } else { View.GONE }
     }
 
-    private fun onLoadData(status: UIStatus<List<Sale>>) {
+    private fun onLoadData(status: UIStatus<List<ListItem>>) {
         when (status) {
             is UIStatus.Loading -> {
                 Log.i(TAG, "onLoadData::Status=Loading")
@@ -112,7 +113,7 @@ class ListSaleFragment : Fragment(R.layout.fragment_list_sale) {
         }
     }
 
-    private fun onDeleteData(status: UIStatus<List<Sale>>) {
+    private fun onDeleteData(status: UIStatus<List<ListItem>>) {
         when (status) {
             is UIStatus.Loading -> {
                 Log.i(TAG, "onDeleteData::Status=Loading")
@@ -166,7 +167,7 @@ class ListSaleFragment : Fragment(R.layout.fragment_list_sale) {
         dialogUtil.showErrorDialog(msg, btOk)
     }
 
-    private fun refreshList(list: List<Sale>) {
+    private fun refreshList(list: List<ListItem>) {
         val hasData = list.isNotEmpty()
         binding.vgEmptyData.visibility = if (hasData) { View.GONE } else { View.VISIBLE }
 

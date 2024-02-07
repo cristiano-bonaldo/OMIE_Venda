@@ -5,6 +5,7 @@ import androidx.room.Room
 import cvb.com.br.vendaomie.data.db.AppDataBase
 import cvb.com.br.vendaomie.data.db.dao.ItemSaleDao
 import cvb.com.br.vendaomie.data.db.dao.SaleDao
+import cvb.com.br.vendaomie.data.db.migration.Migration1To2
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,7 +27,7 @@ object AppModuleProvide {
             appContext,
             AppDataBase::class.java,
             AppDataBase.DATABASE_NAME
-        ).build()
+        ).addMigrations(Migration1To2()).build()
     }
 
     @Provides

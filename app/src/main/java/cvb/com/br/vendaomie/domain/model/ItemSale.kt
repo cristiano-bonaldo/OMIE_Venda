@@ -5,5 +5,5 @@ data class ItemSale(
     val saleId: Long,
     val product: String,
     val unitValue: Double,
-    val quantity: Int
+    val quantity: Double
 )

@@ -18,5 +18,5 @@ data class ItemSaleEntity(
     @ColumnInfo(name="unit_value")
     val unitValue: Double,
 
-    val quantity: Int
+    val quantity: Double
 )

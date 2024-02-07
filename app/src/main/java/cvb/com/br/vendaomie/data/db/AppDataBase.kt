@@ -15,7 +15,8 @@ import cvb.com.br.vendaomie.util.Constants
         SaleEntity::class,
         ItemSaleEntity::class
     ],
-    version = 1,
+    //version = 1,
+    version = 2,
     exportSchema = true
 )
 abstract class AppDataBase : RoomDatabase() {

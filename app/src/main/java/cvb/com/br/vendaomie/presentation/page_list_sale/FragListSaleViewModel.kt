@@ -12,6 +12,7 @@ import cvb.com.br.vendaomie.domain.model.Sale
 import cvb.com.br.vendaomie.domain.use_case.ItemSaleUseCase
 import cvb.com.br.vendaomie.domain.use_case.SaleUseCase
 import cvb.com.br.vendaomie.presentation.UIStatus
+import cvb.com.br.vendaomie.presentation.page_list_sale.adapter.ListItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.launch
@@ -24,12 +25,12 @@ class FragListSaleViewModel @Inject constructor(
     private val itemSaleUseCase: ItemSaleUseCase
 ) : ViewModel() {
 
-    private val mLoadData = MutableLiveData<UIStatus<List<Sale>>>()
-    val loadData: LiveData<UIStatus<List<Sale>>>
+    private val mLoadData = MutableLiveData<UIStatus<List<ListItem>>>()
+    val loadData: LiveData<UIStatus<List<ListItem>>>
         get() = mLoadData
 
-    private val mDeleteData = MutableLiveData<UIStatus<List<Sale>>>()
-    val deleteData: LiveData<UIStatus<List<Sale>>>
+    private val mDeleteData = MutableLiveData<UIStatus<List<ListItem>>>()
+    val deleteData: LiveData<UIStatus<List<ListItem>>>
         get() = mDeleteData
 
     private val mInsertData = MutableLiveData<UIStatus<Long>>()
@@ -82,7 +83,7 @@ class FragListSaleViewModel @Inject constructor(
             try {
                 mLoadData.value = UIStatus.Loading
 
-                val listSale = getListSale()
+                val listSale = getListItem()
 
                 mLoadData.value = UIStatus.Success(listSale)
             } catch (error: Throwable) {
@@ -116,13 +117,28 @@ class FragListSaleViewModel @Inject constructor(
 
                 saleUseCase.deleteSale(sale)
 
-                val listSale = getListSale()
+                val listSale = getListItem()
 
                 mDeleteData.value = UIStatus.Success(listSale)
             } catch (error: Throwable) {
                 mDeleteData.value = UIStatus.Error(error)
             }
         }
+    }
+
+    private suspend fun getListItem(): List<ListItem> {
+        val listItem = saleUseCase.getListItem()
+
+        listItem.filterIsInstance<ListItem.InfoItem>().map { item ->
+            val sale = item.sale
+            val listItemSale = itemSaleUseCase.getListItemsSaleBySale(sale.id)
+            val total = itemSaleUseCase.getTotalBySale(sale.id)
+
+            sale.listItemSale = listItemSale
+            sale.total = total
+        }
+
+        return listItem
     }
 
     private suspend fun getListSale(): List<Sale> {

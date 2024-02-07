@@ -63,7 +63,7 @@ class ItemSaleDialog(
         } catch (e: Exception) {
             0.00
         }
-        val qtd = binding.tvQtd.text.toString().toInt()
+        val qtd = binding.tvQtd.text.toString().toDouble()
 
         val newItemSale =
             itemSale?.let {
@@ -86,7 +86,7 @@ class ItemSaleDialog(
     }
 
     private fun updateQuantity(type: Int) {
-        var currentQtd = binding.tvQtd.text.toString().toInt()
+        var currentQtd = binding.tvQtd.text.toString().toDouble()
 
         if (type == C_DECREASE_QTD) {
             if (currentQtd > 0) {
@@ -98,7 +98,7 @@ class ItemSaleDialog(
             }
         }
 
-        binding.tvQtd.text = currentQtd.toString()
+        binding.tvQtd.setText(currentQtd.toString())
     }
 
     private fun showInformation() {
@@ -110,7 +110,7 @@ class ItemSaleDialog(
             binding.etProd.setText(item.product)
             binding.tvProd.text = item.product
             binding.etValueUnit.setText(item.unitValue.toString())
-            binding.tvQtd.text = item.quantity.toString()
+            binding.tvQtd.setText(item.quantity.toString())
         }
     }
 
